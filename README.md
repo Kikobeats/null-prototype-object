@@ -2,6 +2,11 @@
 
 > A minimal utility for creating **objects with a `null` prototype** using a **reusable constructor**.
 
+
+![Last version](https://img.shields.io/github/tag/Kikobeats/null-prototype-object.svg?style=flat-square)
+[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/null-prototype-object.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/null-prototype-object)
+[![NPM Status](https://img.shields.io/npm/dm/null-prototype-object.svg?style=flat-square)](https://www.npmjs.org/package/null-prototype-object)
+
 # 🧠 Why?
 
 In JavaScript, `Object.create(null)` creates a "clean" object with no prototype chain — useful for:
