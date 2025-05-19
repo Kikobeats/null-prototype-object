@@ -62,6 +62,7 @@ Fastest is NullProtoObj via constructor,{} (normal object)
 ## License
 
 **null-prototype-object** © [Kiko Beats](https://kikobeats.com), released under the [MIT](https://github.com/kikobeats/null-prototype-object/blob/master/LICENSE.md) License.<br>
-Authored and maintained by [Kiko Beats](https://kikobeats.com) with help from [contributors](https://github.com/kikobeats/null-prototype-object/contributors).
+Authored and maintained by [Kiko Beats](https://kikobeats.com) with help from [contributors](https://github.com/kikobeats/null-prototype-object/contributors).<br>
+Credits to [pi0](https://github.com/pi0) and [rou3](https://github.com/h3js/rou3) codebase.
 
 > [kikobeats.com](https://kikobeats.com) · GitHub [Kiko Beats](https://github.com/kikobeats) · Twitter [@kikobeats](https://twitter.com/kikobeats)
