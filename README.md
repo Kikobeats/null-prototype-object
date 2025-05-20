@@ -18,7 +18,7 @@ But there's a performance cost in high-frequency scenarios.
 
 ### The problem
 
-Each call to `Object.create(null)` creates a **new object shape** (hidden class). 
+Each call to `Object.create(null)` creates a **new object shape** (hidden class).
 
 JavaScript engines like V8 can't optimize repeated use because:
 
@@ -90,8 +90,8 @@ Fastest is NullProtoObj via constructor,{} (normal object)
 
 ## License
 
-**null-prototype-object** © [Kiko Beats](https://kikobeats.com), released under the [MIT](https://github.com/kikobeats/null-prototype-object/blob/master/LICENSE.md) License.<br>
-Authored and maintained by [Kiko Beats](https://kikobeats.com) with help from [contributors](https://github.com/kikobeats/null-prototype-object/contributors).<br>
-Credits to [pi0](https://github.com/pi0) and [rou3](https://github.com/h3js/rou3) codebase.
+**null-prototype-object** © [Kiko Beats](https://kikobeats.com), released under the [MIT](https://github.com/kikobeats/null-prototype-object/blob/master/LICENSE.md) License.
+
+Credits to [pi0](https://github.com/h3js/rou3/blame/main/src/_utils.ts) and [anonrig](https://github.com/anonrig/fast-querystring/blame/main/lib/parse.js#L6). Maintained by [Kiko Beats](https://kikobeats.com) with help from [contributors](https://github.com/kikobeats/null-prototype-object/contributors).
 
 > [kikobeats.com](https://kikobeats.com) · GitHub [Kiko Beats](https://github.com/kikobeats) · Twitter [@kikobeats](https://twitter.com/kikobeats)
