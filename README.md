@@ -2,28 +2,57 @@
 
 > A minimal utility for creating **objects with a `null` prototype** using a **reusable constructor**.
 
-
 ![Last version](https://img.shields.io/github/tag/Kikobeats/null-prototype-object.svg?style=flat-square)
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/null-prototype-object.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/null-prototype-object)
 [![NPM Status](https://img.shields.io/npm/dm/null-prototype-object.svg?style=flat-square)](https://www.npmjs.org/package/null-prototype-object)
 
-# 🧠 Why?
+## Why not just `Object.create(null)`
 
-In JavaScript, `Object.create(null)` creates a "clean" object with no prototype chain — useful for:
+`Object.create(null)` gives you a clean object with no prototype — useful for:
 
-- Dictionary-style key-value stores
-- Avoiding inherited methods like `toString`, `hasOwnProperty`, etc.
-- Safer serialization
-- Avoiding prototype pollution attacks
+- Safe key-value maps
+- Avoiding inherited methods (`toString`, `hasOwnProperty`, etc.)
+- Preventing prototype pollution
 
-But `Object.create(null)` creates **a new shape every time**, which can be slower in high-performance environments like V8 (used in Node.js).
+But there's a performance cost in high-frequency scenarios.
 
-Instead of repeatedly calling `Object.create(null)`, we use a **constructor function with a frozen null-prototype**:
+### The problem
 
-- ✅ Prototype is shared and immutable
-- ✅ Instance prototype is still null-based
-- ✅ Fast object allocation via constructor
-- ✅ No inherited methods
+Each call to `Object.create(null)` creates a **new object shape** (hidden class). 
+
+JavaScript engines like V8 can't optimize repeated use because:
+
+- The prototype isn't shared
+- Shapes can't be reused
+- Inline caching and JIT optimizations break down
+- It leads to **megamorphic** call sites (a de-optimization trigger)
+
+### The solution: `null-prototype-object`
+
+This package provides a constructor with a **frozen, shared null-prototype**, enabling V8 to:
+
+- Reuse a stable hidden class
+- Inline property access
+- Optimize memory layout
+- Avoid dynamic shape transitions
+
+### Why it’s faster
+
+| Feature                   | `Object.create(null)` | `new NullProtoObj()` |
+|---------------------------|------------------------|------------------------|
+| Shared prototype          | ❌                     | ✅                     |
+| Hidden class reuse        | ❌                     | ✅                     |
+| Inline caching            | ❌                     | ✅                     |
+| JIT-friendly              | ❌                     | ✅                     |
+| Memory efficient          | ❌                     | ✅                     |
+
+### When to use it
+
+Use `null-prototype-object` if:
+
+- You're allocating many null-prototype objects (e.g. parsers, serializers, caches).
+- You want predictable performance in tight loops.
+- You're optimizing object creation in hot code paths.
 
 ## Install
 
