@@ -87,5 +87,10 @@
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npx nano-staged"
   },
-  "contributors": []
+  "contributors": [
+    {
+      "name": "Sukka",
+      "email": "github@skk.moe"
+    }
+  ]
 }
