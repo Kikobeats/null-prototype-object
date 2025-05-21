@@ -20,6 +20,10 @@ suite
     const obj = {}
     obj.foo = 123
   })
+  .add('{__proto__:null}', function () {
+    const obj = { __proto__: null }
+    obj.foo = 123
+  })
   .on('cycle', function (event) {
     console.log(String(event.target))
   })
