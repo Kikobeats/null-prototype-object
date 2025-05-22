@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2025-05-22)
+
+
+### Features
+
+* add typescript definition ([#3](https://github.com/kikobeats/null-prototype-object/issues/3)) ([76106dd](https://github.com/kikobeats/null-prototype-object/commit/76106dd02d1d1258d969738e56e53cd30a55aa20))
+
 ## 1.1.0 (2025-05-22)
 
 
