@@ -4,6 +4,7 @@
   "homepage": "https://github.com/kikobeats/null-prototype-object",
   "version": "1.0.1",
   "main": "src/index.js",
+  "types": "index.d.ts",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
@@ -69,7 +70,10 @@
     }
   },
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    }
   },
   "nano-staged": {
     "*.js": [
