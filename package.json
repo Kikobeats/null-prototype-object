@@ -3,13 +3,25 @@
   "description": "Fastest way for creating null-prototype objects in JavaScript",
   "homepage": "https://github.com/kikobeats/null-prototype-object",
   "version": "1.2.0",
+  "types": "src/index.d.ts",
   "main": "src/index.js",
-  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
   "author": {
-    "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
     "url": "https://kikobeats.com"
   },
+  "contributors": [
+    {
+      "name": "Sukka",
+      "email": "github@skk.moe"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/null-prototype-object.git"
@@ -18,13 +30,13 @@
     "url": "https://github.com/kikobeats/null-prototype-object/issues"
   },
   "keywords": [
-    "object",
-    "null-prototype",
-    "prototype",
-    "no-prototype",
-    "secure",
     "dictionary",
     "fast",
+    "no-prototype",
+    "null-prototype",
+    "object",
+    "prototype",
+    "secure",
     "utility"
   ],
   "devDependencies": {
@@ -46,6 +58,9 @@
   "engines": {
     "node": ">= 20"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
@@ -69,12 +84,6 @@
       ]
     }
   },
-  "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "default": "./src/index.js"
-    }
-  },
   "nano-staged": {
     "*.js": [
       "prettier-standard",
@@ -90,11 +99,5 @@
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npx nano-staged"
-  },
-  "contributors": [
-    {
-      "name": "Sukka",
-      "email": "github@skk.moe"
-    }
-  ]
+  }
 }
