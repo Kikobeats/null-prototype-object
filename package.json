@@ -2,7 +2,7 @@
   "name": "null-prototype-object",
   "description": "Fastest way for creating null-prototype objects in JavaScript",
   "homepage": "https://github.com/kikobeats/null-prototype-object",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "types": "src/index.d.ts",
   "main": "src/index.js",
   "exports": {
